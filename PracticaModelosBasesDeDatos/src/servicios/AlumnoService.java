@@ -55,6 +55,8 @@ public class AlumnoService {
 		
 		return null;
 	}
+	
+	
 	public List<AlumnoDto> obtenerTodosLosAlumnos() {
 		
 		List <AlumnoEntidad> alumnos = alumnoDao.obtenerTodosLosAlumnos();
@@ -65,6 +67,8 @@ public class AlumnoService {
 		}
 		return alumnosDto;
 	}
+	
+	
 	public void actualizarAlumno(AlumnoDto alumnoDto) {
 		AlumnoEntidad alumno  = alumnoDao.obtenerAlumnoPorId(alumnoDto.getIdAlumno());
 		

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -81,7 +82,26 @@ public class AlumnoDaoImplementacion  implements AlumnoDao{
 	
 	public List<AlumnoEntidad> obtenerTodosLosAlumnos() {
 		
-		return null;
+		String sql = " select cod_alumno, nombre_alumno, apellidos_alumno, fecha_nacimiento, grupo from alumno";
+		
+		List<AlumnoEntidad> alumnos = new ArrayList<AlumnoEntidad>();
+		
+		try {
+			Connection connection = dataSource.getConnection();
+			
+			PreparedStatement statement = connection.prepareStatement(sql);
+			
+			ResultSet result = statement.executeQuery();
+			
+			while(result.next()) {
+				alumnos.add(mapearResultSetAlumno(result));
+			}
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		return alumnos;
 	}
 
 
