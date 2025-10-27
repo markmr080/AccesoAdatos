@@ -141,5 +141,18 @@ public class ProfesorDaoImplementacion implements ProfesorDao {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	//Profesor Servicio metodos
+	
+	
+	public void crearProfesor(ProfesorDto profesor);
+	public ProfesorDto obtenerProfesorPorCodigo(String codProfesor);
+	public ProfesorDto obtenerProfesorPorNombre(String nombre);
+	public List<ProfesorDto> obtenerTodosLosProfesores();
+	public void actualizarProfesor(ProfesorDto profesor);
+	public void eliminarProfesor (String codProfesor);
+	
+	
+	
 
 }
