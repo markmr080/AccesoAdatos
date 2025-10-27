@@ -22,7 +22,7 @@ public class AlumnoDaoImplementacion  implements AlumnoDao{
 	
 	
 	
-	public AlumnoDaoImplementacion(DataSource dataSource) {
+	private AlumnoDaoImplementacion(DataSource dataSource) {
 		super();
 		this.dataSource = dataSource;
 	}
@@ -38,7 +38,7 @@ public class AlumnoDaoImplementacion  implements AlumnoDao{
 	
 	public void crearAlumno(AlumnoEntidad alumno) {
 		
-		String sql = "insert into alumno (codAlumno, nombreAlumno, apellidosAlumno, fechaNacimiento, grupo) values (?,?,?,?,?)";
+		String sql = "insert into alumno (cod_Alumno, nombre_Alumno, apellidos_Alumno, fecha_Nacimiento, grupo) values (?,?,?,?,?)";
 		
 		try {
 			Connection connection = dataSource.getConnection();
